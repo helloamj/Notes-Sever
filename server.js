@@ -17,7 +17,4 @@ mongoose.connect('mongodb+srv://jainkunal129:ls9hzGAy1hTqvMAX@cluster0.u4jilpn.m
 
     app.use('/notes',route)
 })
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, (req, res) => {
-    console.log('Starting Server...')
-})
+app.listen(process.env.PORT || 3000)
