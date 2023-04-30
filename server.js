@@ -9,6 +9,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 //'mongodb+srv://jainkunal129:ls9hzGAy1hTqvMAX@cluster0.u4jilpn.mongodb.net/?retryWrites=true&w=majority'
 mongoose.connect(process.env.SYS_URL).then(() => {
+    app.listen(process.env.SYS_PORT || 3000)
     //Home Route
     app.get('/', (req, res) => {
         const response = { message: "API Works!" };
@@ -17,4 +18,4 @@ mongoose.connect(process.env.SYS_URL).then(() => {
 
     app.use('/notes',route)
 })
-app.listen(process.env.SYS_PORT || 3000)
+
