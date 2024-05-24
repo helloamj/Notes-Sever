@@ -4,7 +4,8 @@ const bodyParser = require('body-parser');
 const Note = require('./src/models/Note');
 const route = require('./src/routes/Note');
 const app = express()
-
+const dotenv = require('dotenv')
+dotenv.config()
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 //'mongodb+srv://jainkunal129:ls9hzGAy1hTqvMAX@cluster0.u4jilpn.mongodb.net/?retryWrites=true&w=majority'
@@ -16,6 +17,6 @@ mongoose.connect(process.env.SYS_URL).then(() => {
         res.json(response);
     })
 
-    app.use('/notes',route)
+    app.use('/notes', route)
 })
 
